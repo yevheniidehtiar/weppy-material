@@ -215,14 +215,14 @@ class MD1FormStyle(FormStyle):
 
         if multiple:
             return MD1FormStyle.widget_multiple(
-                attr, field, value, options, _class=_class, _id=_id)
+                attr, field, value, options, _class=_class, _id=fid)
 
         option_items = [MD1FormStyle._default_select_option(), ]
         option_items += [
             tag.option(n, _value=k, _selected=selected(k)) for k, n in options]
 
         return tag.div(
-            tag.select(*option_items, _name=field.name, _class=_class, id=_id or field.name),
+            tag.select(*option_items, _name=field.name, _class=_class, id=fid),
             load_js(),
         )
 
