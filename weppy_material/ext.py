@@ -140,13 +140,11 @@ class MD1FormStyle(FormStyle):
     def widget_bool(attr, field, value, _id=None):
         fid = _id or field.name
         res = []
-        res.append('Off')
         res.append(tag.input(
-            _name=field.name, _type='checkbox', _id=fid, _class="form-control",
+            _name=field.name, _type='checkbox', _id=fid,
             _value=str(value) if value is not None else '0'))
-        res.append(tag.span(_class="lever"))
-        res.append('On')
-        return tag.div(tag.label(*res), _id=fid, _class='switch')
+        res.append(tag.span(field.name))
+        return tag.p(tag.label(*res), _id=fid,)
 
     @staticmethod
     def widget_date(attr, field, value, _class='date', _id=None):
@@ -246,7 +244,7 @@ class MD1FormStyle(FormStyle):
         option_items += [tag.option(n, _value=k, _selected=selected(k)) for k, n in options]
 
         return tag.div(
-            tag.select(*option_items, _multiple=True, _name=field.name, _class=_class,_id=_id or field.name),
+            tag.select(*option_items, _multiple=True, _name=field.name, _class=_class, _id=_id or field.name),
             load_js(),
         )
 
