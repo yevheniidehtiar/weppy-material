@@ -25,7 +25,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='weppy_material',  # Required
-    version='0.1.1',  # Required
+    version='0.1.2',  # Required
     description='Material Design style for Weppy\'s forms',  # Required
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
