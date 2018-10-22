@@ -222,7 +222,7 @@ class MD1FormStyle(FormStyle):
             tag.option(n, _value=k, _selected=selected(k)) for k, n in options]
 
         return tag.div(
-            tag.select(*option_items, _name=field.name, _class=_class, id=fid),
+            tag.select(*option_items, _name=field.name, _class=_class, _id=fid),
             load_js(),
         )
 
